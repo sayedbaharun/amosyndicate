@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 26, 26, 26;
+  --luxury-gold: #D4AF37;
+  --gold-darker: #B8941F;
+  --dubai-orange: #FF6B35;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 10.2%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 10.2%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 43 74% 49%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 10.2%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 10.2%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 10.2%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 43 74% 49%;
+    --chart-1: 43 74% 49%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-black text-white font-montserrat;
+  }
+  .font-playfair {
+    font-family: var(--font-playfair);
+  }
+  .font-montserrat {
+    font-family: var(--font-montserrat);
+  }
+}
+
+@layer utilities {
+  .luxury-gold {
+    color: var(--luxury-gold);
+  }
+  .luxury-gold-bg {
+    background-color: var(--luxury-gold);
+  }
+  .gold-gradient {
+    background: linear-gradient(135deg, var(--luxury-gold) 0%, var(--gold-darker) 100%);
+  }
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .text-shadow-luxury {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--luxury-gold);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-darker);
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Luxury selection styles */
+::selection {
+  background-color: var(--luxury-gold);
+  color: #000;
+}
+
+::-moz-selection {
+  background-color: var(--luxury-gold);
+  color: #000;
+}
