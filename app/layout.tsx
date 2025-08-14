@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Playfair_Display, Montserrat } from 'next/font/google';
+import ClientWrapper from '@/components/layout/ClientWrapper';
 
 const playfair = Playfair_Display({ 
   subsets: ['latin'],
@@ -40,7 +41,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${montserrat.variable}`}>
       <body className="font-montserrat antialiased bg-black text-white">
-        {children}
+        <ClientWrapper>
+          {children}
+        </ClientWrapper>
       </body>
     </html>
   );

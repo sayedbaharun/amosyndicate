@@ -5,6 +5,12 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Crown, Zap, Rocket, ArrowRight, Check, Star } from 'lucide-react';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+
+const ROICalculator = dynamic(() => import('@/components/ui/ROICalculator'), {
+  ssr: false,
+  loading: () => <div className="h-96 animate-pulse bg-gray-900 rounded-2xl" />
+});
 
 const serviceTiers = [
   {
@@ -334,6 +340,20 @@ export default function ServicesPage() {
                 <ArrowRight className="ml-3 w-5 h-5" />
               </Link>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ROI Calculator Section */}
+      <section className="py-24 bg-gradient-to-br from-[#1A1A1A] to-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <ROICalculator />
           </motion.div>
         </div>
       </section>
