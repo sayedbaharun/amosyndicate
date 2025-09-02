@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Playfair_Display, Montserrat } from 'next/font/google';
+import { Playfair_Display, Montserrat, IBM_Plex_Sans_Arabic, Readex_Pro } from 'next/font/google';
+import Script from 'next/script';
 import ClientWrapper from '@/components/layout/ClientWrapper';
 
 const playfair = Playfair_Display({ 
@@ -15,21 +16,35 @@ const montserrat = Montserrat({
   display: 'swap',
 });
 
+const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
+  subsets: ['arabic'],
+  variable: '--font-ibm-plex-arabic',
+  display: 'swap',
+  weight: ['100', '200', '300', '400', '500', '600', '700'],
+});
+
+const readexPro = Readex_Pro({
+  subsets: ['arabic', 'latin'],
+  variable: '--font-readex-pro',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
-  title: 'Arab Money Official | Premier Luxury Marketing Authority - Dubai',
-  description: 'The Middle East\'s leading luxury digital marketing agency. Transforming luxury brands through sophisticated content and strategic digital marketing in Dubai and the MENA region.',
-  keywords: 'luxury marketing Dubai, Middle East digital marketing, luxury brand strategy UAE, Dubai social media agency, Arab Money Official',
-  authors: [{ name: 'Arab Money Official LLC' }],
+  metadataBase: new URL('https://amosyndicate.com'),
+  title: 'AMO Marketing | Gulf Heritage Meets Digital Excellence - Dubai',
+  description: 'Gulf region\'s premier luxury marketing atelier. Where heritage meets digital excellence. Serving royal families, family offices, and visionary brands across Dubai, UAE, Saudi Arabia, and the GCC with cultural authenticity and Vision 2030 alignment.',
+  keywords: 'Gulf luxury marketing, Dubai digital marketing, GCC brand strategy, royal family marketing, family office marketing, Vision 2030 alignment, UAE luxury brands, Saudi Arabia marketing, cultural marketing Gulf, تسويق فاخر الخليج',
+  authors: [{ name: 'AMO - Gulf Heritage Marketing Atelier' }],
   openGraph: {
-    title: 'Arab Money Official | Premier Luxury Marketing Authority',
-    description: 'Transforming luxury brands through sophisticated content and strategic digital marketing',
+    title: 'AMO | Where Gulf Heritage Meets Digital Excellence',
+    description: 'Crafting digital legacies for visionary Gulf brands with cultural authenticity and global excellence',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Arab Money Official | Premier Luxury Marketing Authority',
-    description: 'The Middle East\'s leading luxury digital marketing agency',
+    title: 'AMO | Gulf Heritage Digital Excellence',
+    description: 'Gulf region\'s premier luxury marketing atelier serving royal families and visionary brands',
   },
 };
 
@@ -39,7 +54,40 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${montserrat.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${montserrat.variable} ${ibmPlexSansArabic.variable} ${readexPro.variable}`}>
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
+        
+        {/* Facebook Pixel */}
+        <Script id="facebook-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', 'YOUR_PIXEL_ID');
+            fbq('track', 'PageView');
+          `}
+        </Script>
+      </head>
       <body className="font-montserrat antialiased bg-black text-white">
         <ClientWrapper>
           {children}

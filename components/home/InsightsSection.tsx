@@ -7,26 +7,26 @@ import Image from 'next/image';
 
 const insights = [
   {
-    title: 'The Future of Luxury Marketing in the GCC',
-    excerpt: 'Exploring emerging trends that will define luxury brand strategies in the Gulf region for 2025 and beyond.',
-    category: 'Market Analysis',
+    title: 'Digital Transformation in the Gulf: Vision 2030 Alignment',
+    excerpt: 'How luxury brands can leverage Saudi Arabia and UAE\'s digital transformation initiatives to accelerate growth and cultural resonance.',
+    category: 'Gulf Strategy',
     readTime: '8 min read',
     date: 'Jan 15, 2025',
     image: 'https://images.pexels.com/photos/936722/pexels-photo-936722.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
     featured: true,
   },
   {
-    title: 'Building Personal Brands for High-Net-Worth Individuals',
-    excerpt: 'Strategic approaches to elevating executive presence and thought leadership in competitive markets.',
-    category: 'Personal Branding',
+    title: 'Luxury Marketing During Ramadan: Cultural Excellence',
+    excerpt: 'Mastering the art of sophisticated campaigns that honor Gulf traditions while elevating brand prestige during holy months.',
+    category: 'Cultural Marketing',
     readTime: '6 min read',
     date: 'Jan 12, 2025',
     image: 'https://images.pexels.com/photos/1043473/pexels-photo-1043473.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
   },
   {
-    title: 'Luxury Real Estate Marketing: Dubai Case Study',
-    excerpt: 'How we achieved 340% lead increase for premium properties through strategic digital campaigns.',
-    category: 'Case Study',
+    title: 'Royal Protocol in Digital Marketing: Heritage Meets Innovation',
+    excerpt: 'Understanding the nuanced approach required when marketing to royal families and establishing protocols for digital excellence.',
+    category: 'Royal Protocol',
     readTime: '10 min read',
     date: 'Jan 10, 2025',
     image: 'https://images.pexels.com/photos/1546168/pexels-photo-1546168.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
@@ -56,7 +56,7 @@ export default function InsightsSection() {
             <span className="luxury-gold">Intelligence</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Stay ahead with exclusive insights, industry analysis, and strategic guidance from the Middle East's luxury marketing experts
+            Exclusive insights on Gulf luxury marketing, cultural protocol, and Vision 2030 alignment from our regional heritage experts
           </p>
         </motion.div>
 

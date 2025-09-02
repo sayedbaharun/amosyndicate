@@ -46,13 +46,13 @@ const portfolioItems = [
 
 const testimonials = [
   {
-    quote: "Arab Money Official transformed our luxury brand's digital presence beyond our wildest expectations. Their understanding of the Middle East luxury market is unparalleled.",
+    quote: "AMO transformed our luxury brand's digital presence beyond our wildest expectations. Their understanding of Gulf culture and luxury market dynamics is unparalleled.",
     author: "Sarah Al-Mahmoud",
     title: "CEO, Elite Properties Dubai",
     avatar: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
   },
   {
-    quote: "Working with Arab Money Official was a game-changer. They elevated my personal brand and positioned me as a thought leader in the industry.",
+    quote: "Working with AMO was a game-changer. They elevated my personal brand with cultural authenticity and positioned me as a thought leader in the Gulf market.",
     author: "Ahmed Hassan",
     title: "Managing Director, Luxury Investments",
     avatar: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
@@ -82,7 +82,7 @@ export default function PortfolioShowcase() {
             <span className="luxury-gold">Excellence</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Discover how we've transformed luxury brands across the Middle East with strategic marketing that delivers exceptional results
+            Discover how we've transformed luxury brands across the Gulf region with strategic marketing that honors heritage while delivering exceptional results
           </p>
         </motion.div>
 
@@ -220,7 +220,7 @@ export default function PortfolioShowcase() {
           viewport={{ once: true }}
         >
           <Link
-            href="/portfolio"
+            href="/case-studies"
             className="inline-flex items-center px-8 py-4 gold-gradient text-black font-semibold rounded-lg hover:shadow-2xl hover:shadow-[#D4AF37]/25 transition-all duration-300 text-lg"
           >
             Explore Complete Portfolio

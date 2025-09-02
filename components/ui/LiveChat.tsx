@@ -16,7 +16,7 @@ export default function LiveChat() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: 'Welcome to Arab Money Official! How can we elevate your luxury brand today?',
+      text: 'Marhaba! Welcome to our luxury digital atelier. How may we assist your brand\'s journey?',
       sender: 'agent',
       timestamp: new Date(),
     },
@@ -65,20 +65,26 @@ export default function LiveChat() {
   const getAgentResponse = (userMessage: string): string => {
     const lowerMessage = userMessage.toLowerCase();
     
+    if (lowerMessage.includes('ramadan') || lowerMessage.includes('eid')) {
+      return 'We specialize in culturally sensitive campaigns during Ramadan and Eid. Our Gulf heritage ensures authentic messaging that honors traditions while elevating your brand.';
+    }
     if (lowerMessage.includes('price') || lowerMessage.includes('cost')) {
-      return 'Our luxury marketing services range from $2,000 to $15,000+ per month. Would you like to schedule a consultation to discuss your specific needs?';
+      return 'Our luxury marketing services begin at $5,000 per month for Gulf market entry. Family offices and royal accounts receive bespoke pricing. Shall we arrange a private consultation?';
     }
     if (lowerMessage.includes('service')) {
-      return 'We offer three tiers: Content Mastery ($2-5K), Campaign Excellence ($5-15K), and Luxury Authority ($15K+). Each designed for different stages of luxury brand growth.';
+      return 'We offer Gulf Heritage Marketing ($5-15K), Royal Protocol Campaigns ($15-50K), and Sovereign Brand Authority ($50K+). Each tier includes cultural consultation and regional expertise.';
     }
     if (lowerMessage.includes('contact') || lowerMessage.includes('call')) {
-      return 'I can schedule a VIP consultation for you immediately. Our luxury brand strategists are available for video calls or in-person meetings at our Dubai office. What works best for you?';
+      return 'Ahlan wa sahlan! I can arrange a private consultation at our Dubai Media City office or via secure video conference. Our Gulf specialists honor traditional business customs.';
     }
     if (lowerMessage.includes('results') || lowerMessage.includes('roi')) {
-      return 'Our clients typically see 200-400% ROI within 6 months. Elite Properties Dubai achieved 340% lead increase and $2.8M in revenue. Would you like to see more case studies?';
+      return 'Our Gulf clients achieve 300-500% ROI within 6 months. Recent successes include a royal family business (450% growth) and UAE family office ($5.2M revenue increase). Vision 2030 aligned.';
+    }
+    if (lowerMessage.includes('culture') || lowerMessage.includes('tradition')) {
+      return 'Cultural authenticity is our foundation. We ensure all campaigns respect Gulf traditions while meeting international luxury standards. Our team includes cultural consultants.';
     }
     
-    return 'I understand you\'re interested in elevating your luxury brand. Let me connect you with our senior strategist for a personalized consultation. What\'s the best email to reach you?';
+    return 'Shukran for your interest in our luxury digital atelier. Our Gulf specialists understand the nuances of regional luxury marketing. May I connect you with our senior cultural strategist?';
   };
 
   return (
@@ -90,7 +96,7 @@ export default function LiveChat() {
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8 }}
-            className="fixed bottom-24 right-6 z-40 glass-effect rounded-lg p-4 max-w-xs"
+            className="fixed bottom-24 right-6 z-40 glass-refined grain-texture rounded-lg p-4 max-w-xs shadow-luxury"
           >
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
@@ -113,7 +119,7 @@ export default function LiveChat() {
 
       {/* Chat Button */}
       <motion.button
-        className="fixed bottom-6 right-6 z-50 p-4 gold-gradient rounded-full shadow-2xl hover:shadow-[#D4AF37]/50 transition-all duration-300"
+        className="fixed bottom-6 right-6 z-50 p-4 gold-gradient rounded-full shadow-luxury-lg hover:shadow-luxury-lg hover-magnetic transition-luxury"
         onClick={() => {
           setIsOpen(!isOpen);
           setShowNotification(false);
@@ -152,7 +158,7 @@ export default function LiveChat() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.3 }}
-            className="fixed bottom-24 right-6 z-40 w-96 h-[500px] bg-black border border-[#D4AF37]/30 rounded-2xl shadow-2xl overflow-hidden"
+            className="fixed bottom-24 right-6 z-40 w-96 h-[500px] glass-refined grain-texture border border-luxury-gold/20 rounded-2xl shadow-luxury-lg overflow-hidden"
           >
             {/* Header */}
             <div className="gold-gradient p-4">
@@ -186,10 +192,10 @@ export default function LiveChat() {
                   className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-[80%] p-3 rounded-lg ${
+                    className={`max-w-[80%] p-3 rounded-lg transition-smooth ${
                       message.sender === 'user'
-                        ? 'bg-[#D4AF37] text-black'
-                        : 'glass-effect text-white'
+                        ? 'gold-gradient text-refined-black shadow-luxury'
+                        : 'glass-refined grain-texture text-white shadow-emerald'
                     }`}
                   >
                     <p className="text-sm leading-relaxed">{message.text}</p>
@@ -214,11 +220,11 @@ export default function LiveChat() {
                   animate={{ opacity: 1 }}
                   className="flex justify-start"
                 >
-                  <div className="glass-effect p-3 rounded-lg">
+                  <div className="glass-refined grain-texture p-3 rounded-lg shadow-emerald">
                     <div className="flex space-x-1">
-                      <div className="w-2 h-2 bg-[#D4AF37] rounded-full animate-bounce" />
-                      <div className="w-2 h-2 bg-[#D4AF37] rounded-full animate-bounce delay-100" />
-                      <div className="w-2 h-2 bg-[#D4AF37] rounded-full animate-bounce delay-200" />
+                      <div className="w-2 h-2 bg-luxury-gold rounded-full animate-bounce" />
+                      <div className="w-2 h-2 bg-luxury-gold rounded-full animate-bounce delay-100" />
+                      <div className="w-2 h-2 bg-luxury-gold rounded-full animate-bounce delay-200" />
                     </div>
                   </div>
                 </motion.div>
@@ -226,7 +232,7 @@ export default function LiveChat() {
             </div>
 
             {/* Input */}
-            <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-[#D4AF37]/20">
+            <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-luxury-gold/20 glass-refined">
               <div className="flex items-center space-x-2">
                 <input
                   type="text"
@@ -234,11 +240,11 @@ export default function LiveChat() {
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && handleSend()}
                   placeholder="Ask about luxury marketing..."
-                  className="flex-1 px-4 py-2 bg-white/10 border border-[#D4AF37]/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#D4AF37] transition-colors duration-300"
+                  className="flex-1 px-4 py-2 glass-refined grain-texture border border-luxury-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-luxury-gold focus:shadow-luxury transition-luxury"
                 />
                 <motion.button
                   onClick={handleSend}
-                  className="p-2 gold-gradient rounded-lg hover:shadow-lg transition-all duration-300"
+                  className="p-2 gold-gradient rounded-lg hover:shadow-luxury hover-magnetic transition-luxury"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

@@ -91,7 +91,7 @@ export default function ROICalculator() {
         </h2>
         
         <p className="text-gray-300 max-w-2xl mx-auto">
-          See how Arab Money Official's proven strategies can transform your luxury brand's performance based on real client results.
+          See how AMO's Gulf-focused strategies can transform your luxury brand's performance based on real client results and cultural expertise.
         </p>
       </div>
 

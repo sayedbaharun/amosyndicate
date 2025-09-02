@@ -1,21 +1,24 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Play, TrendingUp, Users, Award } from 'lucide-react';
+import { ArrowRight, Play, TrendingUp, Users, Award, Crown, Globe } from 'lucide-react';
 import Link from 'next/link';
+import IslamicPattern from '../ui/IslamicPattern';
 
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
+      {/* Dubai Skyline Background */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-refined-black/70 via-midnight-blue/50 to-emerald-teal/30 z-10" />
         <div 
           className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop')`
+            backgroundImage: `url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080&q=80')`
           }}
         />
+        {/* Islamic Pattern Overlay */}
+        <IslamicPattern opacity={0.08} color="#C9A961" className="z-5" />
       </div>
 
       {/* Content */}
@@ -27,23 +30,22 @@ export default function HeroSection() {
           className="mb-8"
         >
           <motion.h1 
-            className="font-playfair text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight mb-6 text-shadow-luxury"
+            className="font-playfair text-display-large text-white mb-8 text-shadow-luxury"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.2 }}
           >
-            The Middle East's{' '}
-            <span className="luxury-gold">Premier</span>{' '}
-            Luxury Marketing Authority
+            Where Heritage Meets{' '}
+            <span className="luxury-gold">Digital Excellence</span>
           </motion.h1>
           
           <motion.p 
-            className="text-xl sm:text-2xl text-gray-200 mb-12 max-w-4xl mx-auto leading-relaxed"
+            className="text-body-large text-gray-200 mb-10 max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
           >
-            Transforming luxury brands through sophisticated content and strategic digital marketing excellence in the MENA region
+            Crafting digital legacies for visionary brands across the Gulf
           </motion.p>
         </motion.div>
 
@@ -57,53 +59,53 @@ export default function HeroSection() {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
               href="/contact"
-              className="inline-flex items-center px-8 py-4 gold-gradient text-black font-semibold rounded-lg hover:shadow-2xl hover:shadow-[#D4AF37]/25 transition-all duration-300 text-lg"
+              className="inline-flex items-center px-8 py-4 gold-gradient text-refined-black font-semibold rounded-lg hover:shadow-2xl hover:shadow-luxury-gold/25 transition-all duration-300 text-lg"
             >
-              Elevate Your Brand
+              Begin Your Journey
               <ArrowRight className="ml-3 w-5 h-5" />
             </Link>
           </motion.div>
           
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
-              href="/portfolio"
-              className="inline-flex items-center px-8 py-4 border-2 border-[#D4AF37] text-[#D4AF37] font-semibold rounded-lg hover:bg-[#D4AF37] hover:text-black transition-all duration-300 text-lg"
+              href="/case-studies"
+              className="inline-flex items-center px-8 py-4 border-2 border-luxury-gold text-luxury-gold font-semibold rounded-lg hover:bg-luxury-gold hover:text-refined-black transition-all duration-300 text-lg"
             >
               <Play className="mr-3 w-5 h-5" />
-              View Portfolio
+              Explore Excellence
             </Link>
           </motion.div>
         </motion.div>
 
-        {/* Stats */}
+        {/* GCC-Specific Stats */}
         <motion.div 
           className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
         >
-          <div className="glass-effect rounded-2xl p-6 hover:bg-[#D4AF37]/10 transition-all duration-300">
+          <div className="glass-refined grain-texture rounded-2xl p-6 hover-lift hover:shadow-emerald transition-luxury group">
             <div className="flex items-center justify-center mb-3">
-              <TrendingUp className="w-8 h-8 luxury-gold" />
+              <Crown className="w-8 h-8 text-emerald-teal group-hover:scale-110 transition-smooth" />
             </div>
-            <div className="font-playfair text-3xl font-bold luxury-gold mb-1">$12.8B</div>
-            <div className="text-gray-300 text-sm font-medium">GCC Luxury Market</div>
+            <div className="font-playfair text-3xl font-bold text-emerald-teal mb-1">50+</div>
+            <div className="text-pearl-white text-sm font-medium">Royal Family Campaigns</div>
           </div>
           
-          <div className="glass-effect rounded-2xl p-6 hover:bg-[#D4AF37]/10 transition-all duration-300">
+          <div className="glass-refined grain-texture rounded-2xl p-6 hover-lift hover:shadow-luxury transition-luxury group">
             <div className="flex items-center justify-center mb-3">
-              <Users className="w-8 h-8 luxury-gold" />
+              <Globe className="w-8 h-8 luxury-gold group-hover:scale-110 transition-smooth" />
             </div>
-            <div className="font-playfair text-3xl font-bold luxury-gold mb-1">100K+</div>
-            <div className="text-gray-300 text-sm font-medium">Premium Followers</div>
+            <div className="font-playfair text-3xl font-bold luxury-gold mb-1">GCC</div>
+            <div className="text-pearl-white text-sm font-medium">Market Leader</div>
           </div>
           
-          <div className="glass-effect rounded-2xl p-6 hover:bg-[#D4AF37]/10 transition-all duration-300">
+          <div className="glass-refined grain-texture rounded-2xl p-6 hover-lift hover:shadow-midnight transition-luxury group">
             <div className="flex items-center justify-center mb-3">
-              <Award className="w-8 h-8 luxury-gold" />
+              <Award className="w-8 h-8 text-dubai-sand group-hover:scale-110 transition-smooth" />
             </div>
-            <div className="font-playfair text-3xl font-bold luxury-gold mb-1">85%</div>
-            <div className="text-gray-300 text-sm font-medium">Client Retention</div>
+            <div className="font-playfair text-3xl font-bold text-dubai-sand mb-1">عربي</div>
+            <div className="text-pearl-white text-sm font-medium">Bilingual Excellence</div>
           </div>
         </motion.div>
       </div>
@@ -114,8 +116,8 @@ export default function HeroSection() {
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <div className="w-6 h-10 border-2 border-[#D4AF37] rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-[#D4AF37] rounded-full mt-2 animate-pulse" />
+        <div className="w-6 h-10 border-2 border-luxury-gold rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-luxury-gold rounded-full mt-2 animate-pulse" />
         </div>
       </motion.div>
     </section>

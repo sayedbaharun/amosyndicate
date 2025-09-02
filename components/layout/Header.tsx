@@ -10,6 +10,7 @@ const navigation = [
   { name: 'About', href: '/about' },
   { name: 'Services', href: '/services' },
   { name: 'Portfolio', href: '/portfolio' },
+  { name: 'Case Studies', href: '/case-studies' },
   { name: 'Insights', href: '/insights' },
   { name: 'Contact', href: '/contact' },
 ];
@@ -51,10 +52,10 @@ export default function Header() {
             </motion.div>
             <div className="hidden sm:block">
               <div className="font-playfair text-xl lg:text-2xl font-bold text-white group-hover:luxury-gold transition-colors duration-300">
-                Arab Money Official
+                AMO Marketing
               </div>
               <div className="text-xs text-gray-400 font-light">
-                Luxury Marketing Authority
+                Part of Arab Money Official LLC
               </div>
             </div>
           </Link>

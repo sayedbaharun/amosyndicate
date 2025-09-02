@@ -68,7 +68,7 @@ export default function WaitingList() {
       {/* Floating Waiting List Button */}
       <motion.button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 left-6 z-40 glass-effect px-6 py-3 rounded-full hover:bg-[#D4AF37]/20 transition-all duration-300 group"
+        className="fixed bottom-6 left-6 z-40 glass-refined grain-texture px-6 py-3 rounded-full hover:shadow-luxury hover-lift transition-luxury group"
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 2, duration: 0.5 }}
@@ -102,7 +102,7 @@ export default function WaitingList() {
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="relative w-full max-w-2xl bg-gradient-to-br from-black to-[#1A1A1A] border border-[#D4AF37]/30 rounded-2xl p-8 shadow-2xl"
+              className="relative w-full max-w-2xl glass-refined grain-texture border border-luxury-gold/20 rounded-2xl p-8 shadow-luxury-lg"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header */}
@@ -114,23 +114,23 @@ export default function WaitingList() {
                   transition={{ delay: 0.2 }}
                 >
                   <Lock className="w-4 h-4 text-black mr-2" />
-                  <span className="text-black font-semibold text-sm">By Invitation Only</span>
+                  <span className="text-black font-semibold text-sm">Elite Circle Access</span>
                 </motion.div>
                 
                 <h2 className="font-playfair text-3xl lg:text-4xl font-bold text-white mb-4">
                   Join the{' '}
-                  <span className="luxury-gold">Exclusive Waiting List</span>
+                  <span className="luxury-gold">Elite Circle</span>
                 </h2>
                 
                 <p className="text-gray-300 leading-relaxed">
-                  Arab Money Official maintains strict quality standards. We only accept brands that align with our luxury excellence criteria.
+                  We maintain the highest standards of excellence, accepting only distinguished brands that embody Gulf sophistication and global ambition.
                 </p>
               </div>
 
               {/* Stats */}
               <div className="grid grid-cols-3 gap-4 mb-8">
                 <motion.div
-                  className="glass-effect rounded-lg p-4 text-center"
+                  className="glass-refined grain-texture rounded-lg p-4 text-center hover:shadow-luxury transition-luxury"
                   whileHover={{ scale: 1.05 }}
                 >
                   <Users className="w-6 h-6 luxury-gold mx-auto mb-2" />
@@ -139,7 +139,7 @@ export default function WaitingList() {
                 </motion.div>
                 
                 <motion.div
-                  className="glass-effect rounded-lg p-4 text-center"
+                  className="glass-refined grain-texture rounded-lg p-4 text-center hover:shadow-emerald transition-luxury"
                   whileHover={{ scale: 1.05 }}
                 >
                   <Clock className="w-6 h-6 luxury-gold mx-auto mb-2" />
@@ -148,7 +148,7 @@ export default function WaitingList() {
                 </motion.div>
                 
                 <motion.div
-                  className="glass-effect rounded-lg p-4 text-center"
+                  className="glass-refined grain-texture rounded-lg p-4 text-center hover:shadow-midnight transition-luxury"
                   whileHover={{ scale: 1.05 }}
                 >
                   <TrendingUp className="w-6 h-6 luxury-gold mx-auto mb-2" />
@@ -171,7 +171,7 @@ export default function WaitingList() {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 bg-white/10 border border-[#D4AF37]/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#D4AF37] transition-colors duration-300"
+                        className="w-full px-4 py-3 glass-refined grain-texture border border-luxury-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-luxury-gold focus:shadow-luxury transition-luxury"
                         placeholder="Your name"
                       />
                     </div>
@@ -186,7 +186,7 @@ export default function WaitingList() {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 bg-white/10 border border-[#D4AF37]/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#D4AF37] transition-colors duration-300"
+                        className="w-full px-4 py-3 glass-refined grain-texture border border-luxury-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-luxury-gold focus:shadow-luxury transition-luxury"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -203,7 +203,7 @@ export default function WaitingList() {
                         value={formData.company}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 bg-white/10 border border-[#D4AF37]/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#D4AF37] transition-colors duration-300"
+                        className="w-full px-4 py-3 glass-refined grain-texture border border-luxury-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-luxury-gold focus:shadow-luxury transition-luxury"
                         placeholder="Your luxury brand"
                       />
                     </div>
@@ -217,7 +217,7 @@ export default function WaitingList() {
                         value={formData.budget}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 bg-white/10 border border-[#D4AF37]/30 rounded-lg text-white focus:outline-none focus:border-[#D4AF37] transition-colors duration-300"
+                        className="w-full px-4 py-3 glass-refined grain-texture border border-luxury-gold/30 rounded-lg text-white focus:outline-none focus:border-luxury-gold focus:shadow-luxury transition-luxury"
                       >
                         <option value="" className="bg-black">Select budget</option>
                         <option value="5k-15k" className="bg-black">$5,000 - $15,000</option>
@@ -229,7 +229,7 @@ export default function WaitingList() {
                   
                   <div>
                     <label className="block text-white font-semibold mb-2 text-sm">
-                      Why should we accept your brand? *
+                      Share your brand's vision and heritage *
                     </label>
                     <textarea
                       name="message"
@@ -237,31 +237,31 @@ export default function WaitingList() {
                       onChange={handleInputChange}
                       required
                       rows={3}
-                      className="w-full px-4 py-3 bg-white/10 border border-[#D4AF37]/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-[#D4AF37] transition-colors duration-300 resize-none"
-                      placeholder="Tell us about your luxury brand's vision and goals..."
+                      className="w-full px-4 py-3 glass-refined grain-texture border border-luxury-gold/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-luxury-gold focus:shadow-luxury transition-luxury resize-none"
+                      placeholder="Share your brand's story, heritage, and aspirations for the Gulf market..."
                     />
                   </div>
                   
-                  <div className="glass-effect rounded-lg p-4 flex items-start space-x-3">
+                  <div className="glass-refined grain-texture rounded-lg p-4 flex items-start space-x-3 shadow-emerald">
                     <AlertCircle className="w-5 h-5 luxury-gold mt-0.5" />
                     <div className="text-sm text-gray-300">
-                      <p className="font-semibold text-white mb-1">Selection Criteria:</p>
+                      <p className="font-semibold text-white mb-1">Excellence Standards:</p>
                       <ul className="space-y-1 text-xs">
-                        <li>• Minimum budget of $5,000/month</li>
-                        <li>• Commitment to long-term growth</li>
-                        <li>• Alignment with luxury market standards</li>
-                        <li>• Readiness for transformation</li>
+                        <li>• Investment threshold: $5,000+ monthly</li>
+                        <li>• Vision 2030 alignment and regional commitment</li>
+                        <li>• Heritage respect and cultural authenticity</li>
+                        <li>• Excellence-driven transformation mindset</li>
                       </ul>
                     </div>
                   </div>
                   
                   <motion.button
                     type="submit"
-                    className="w-full px-6 py-4 gold-gradient text-black font-semibold rounded-lg hover:shadow-2xl hover:shadow-[#D4AF37]/25 transition-all duration-300"
+                    className="w-full px-6 py-4 gold-gradient text-refined-black font-semibold rounded-lg hover:shadow-luxury-lg hover-magnetic transition-luxury"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    Request Invitation
+                    Apply for Consideration
                   </motion.button>
                 </form>
               ) : (
@@ -282,7 +282,7 @@ export default function WaitingList() {
                     Application Received
                   </h3>
                   
-                  <div className="glass-effect rounded-lg p-6 mb-6">
+                  <div className="glass-refined grain-texture rounded-lg p-6 mb-6 shadow-luxury">
                     <p className="text-gray-300 mb-4">
                       Your position in the waiting list:
                     </p>
@@ -295,8 +295,8 @@ export default function WaitingList() {
                   </div>
                   
                   <p className="text-gray-300 text-sm">
-                    Our luxury brand committee will review your application within 48 hours. 
-                    Only brands that meet our excellence criteria will receive an invitation.
+                    Our Gulf heritage committee reviews applications with cultural sensitivity and excellence standards. 
+                    Selected brands join an exclusive circle of regional luxury leaders.
                   </p>
                 </motion.div>
               )}

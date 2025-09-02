@@ -7,52 +7,46 @@ import Link from 'next/link';
 const serviceTiers = [
   {
     name: 'Content Mastery',
-    price: '$2,000-5,000',
-    period: 'per month',
     icon: Crown,
     description: 'Elevate your brand with premium content creation and social media management',
     features: [
       'Social media management',
       'Content creation & curation',
       'Basic analytics & reporting',
-      '2-week content bank creation',
+      'Arabic content excellence',
       'Community management',
     ],
-    gradient: 'from-[#D4AF37]/20 to-[#B8941F]/20',
-    borderGradient: 'from-[#D4AF37] to-[#B8941F]',
+    gradient: 'from-emerald-teal/20 to-luxury-gold/20',
+    borderGradient: 'from-emerald-teal to-luxury-gold',
   },
   {
     name: 'Campaign Excellence',
-    price: '$5,000-15,000',
-    period: 'per month',
     icon: Zap,
     description: 'Comprehensive digital marketing campaigns that drive luxury brand awareness',
     features: [
       'Everything in Content Mastery',
-      'Influencer partnerships',
+      'Ramadan campaign specialists',
       'Advanced analytics & optimization',
       'Multi-platform campaigns',
-      'Brand strategy consulting',
+      'Regional events marketing',
     ],
-    gradient: 'from-[#D4AF37]/30 to-[#B8941F]/30',
-    borderGradient: 'from-[#D4AF37] to-[#B8941F]',
+    gradient: 'from-luxury-gold/30 to-dubai-sand/30',
+    borderGradient: 'from-luxury-gold to-dubai-sand',
     popular: true,
   },
   {
     name: 'Luxury Authority',
-    price: '$15,000+',
-    period: 'per month',
     icon: Rocket,
     description: 'Complete luxury brand transformation and market dominance strategy',
     features: [
       'Everything in Campaign Excellence',
       'Complete brand strategy',
-      'Event marketing & PR',
-      'Custom app development',
-      'Executive consulting',
+      'National Day & Eid campaigns',
+      'Cultural adaptation expertise',
+      'Royal family campaign management',
     ],
-    gradient: 'from-[#D4AF37]/40 to-[#B8941F]/40',
-    borderGradient: 'from-[#D4AF37] to-[#B8941F]',
+    gradient: 'from-emerald-teal/40 to-pearl-white/20',
+    borderGradient: 'from-emerald-teal to-pearl-white',
   },
 ];
 
@@ -103,7 +97,7 @@ export default function ServicesPreview() {
                   </div>
                 )}
                 
-                <div className={`relative h-full bg-gradient-to-br ${tier.gradient} backdrop-blur-sm border border-transparent bg-clip-padding rounded-2xl p-8 hover:border-[#D4AF37]/50 transition-all duration-500`}>
+                <div className={`relative h-full bg-gradient-to-br ${tier.gradient} backdrop-blur-sm border border-transparent bg-clip-padding rounded-2xl p-8 hover:border-emerald-teal/50 transition-all duration-500`}>
                   <div className={`absolute inset-0 bg-gradient-to-r ${tier.borderGradient} rounded-2xl p-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-500`}>
                     <div className="w-full h-full bg-black rounded-2xl"></div>
                   </div>
@@ -114,7 +108,7 @@ export default function ServicesPreview() {
                         <IconComponent className="w-8 h-8 luxury-gold" />
                       </div>
                       {tier.popular && (
-                        <div className="text-[#D4AF37] text-sm font-semibold">
+                        <div className="text-luxury-gold text-sm font-semibold">
                           ⭐ Premium Choice
                         </div>
                       )}
@@ -124,16 +118,6 @@ export default function ServicesPreview() {
                       {tier.name}
                     </h3>
                     
-                    <div className="mb-4">
-                      <div className="flex items-baseline">
-                        <span className="font-playfair text-3xl font-bold luxury-gold">
-                          {tier.price}
-                        </span>
-                        <span className="text-gray-400 ml-2">
-                          {tier.period}
-                        </span>
-                      </div>
-                    </div>
 
                     <p className="text-gray-300 mb-8 leading-relaxed">
                       {tier.description}
@@ -142,8 +126,8 @@ export default function ServicesPreview() {
                     <ul className="space-y-3 mb-8">
                       {tier.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-start space-x-3">
-                          <div className="w-1.5 h-1.5 bg-[#D4AF37] rounded-full mt-2 flex-shrink-0" />
-                          <span className="text-gray-300 text-sm leading-relaxed">
+                          <div className="w-1.5 h-1.5 bg-emerald-teal rounded-full mt-2 flex-shrink-0" />
+                          <span className="text-pearl-white text-sm leading-relaxed">
                             {feature}
                           </span>
                         </li>
@@ -156,7 +140,7 @@ export default function ServicesPreview() {
                     >
                       <Link
                         href="/contact"
-                        className="inline-flex items-center justify-center w-full px-6 py-4 bg-gradient-to-r from-[#D4AF37] to-[#B8941F] text-black font-semibold rounded-lg hover:shadow-2xl hover:shadow-[#D4AF37]/25 transition-all duration-300"
+                        className="inline-flex items-center justify-center w-full px-6 py-4 bg-gradient-to-r from-luxury-gold to-emerald-teal text-black font-semibold rounded-lg hover:shadow-2xl hover:shadow-luxury-gold/25 transition-all duration-300"
                       >
                         Get Started
                         <ArrowRight className="ml-2 w-5 h-5" />
@@ -178,7 +162,7 @@ export default function ServicesPreview() {
         >
           <Link
             href="/services"
-            className="inline-flex items-center text-[#D4AF37] hover:text-[#B8941F] transition-colors duration-300 font-semibold"
+            className="inline-flex items-center text-luxury-gold hover:text-emerald-teal transition-colors duration-300 font-semibold"
           >
             Explore All Services
             <ArrowRight className="ml-2 w-5 h-5" />

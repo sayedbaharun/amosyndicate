@@ -20,6 +20,13 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       colors: {
+        'luxury-gold': 'var(--luxury-gold)',
+        'gold-darker': 'var(--gold-darker)',
+        'midnight-blue': 'var(--midnight-blue)',
+        'emerald-teal': 'var(--emerald-teal)',
+        'refined-black': 'var(--refined-black)',
+        'pearl-white': 'var(--pearl-white)',
+        'dubai-sand': 'var(--dubai-sand)',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {

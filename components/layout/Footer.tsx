@@ -8,18 +8,18 @@ const services = [
   'Content Creation',
   'Campaign Management',
   'Brand Strategy',
-  'Influencer Marketing',
-  'Personal Branding',
-  'Event Marketing',
+  'Arabic Content Excellence',
+  'Ramadan Campaigns',
+  'Royal Family Marketing',
 ];
 
 const insights = [
-  'Luxury Marketing Trends',
-  'Middle East Market Analysis',
-  'Social Media Strategy',
-  'Dubai Business Insights',
-  'Executive Branding',
-  'Industry Reports',
+  'GCC Luxury Market Trends',
+  'Cultural Marketing Insights',
+  'Ramadan Campaign Strategy',
+  'Dubai Business Intelligence',
+  'Royal Family Branding',
+  'Regional Event Marketing',
 ];
 
 export default function Footer() {
@@ -41,30 +41,35 @@ export default function Footer() {
                 </div>
                 <div>
                   <div className="font-playfair text-2xl font-bold text-white">
-                    Arab Money Official
+                    AMO Marketing
                   </div>
                   <div className="text-sm text-gray-400">
-                    Luxury Marketing Authority
+                    Part of Arab Money Official LLC
                   </div>
                 </div>
               </Link>
               
               <p className="text-gray-300 leading-relaxed mb-6 max-w-md">
-                The Middle East's premier luxury marketing authority, transforming luxury brands through sophisticated content and strategic digital marketing excellence.
+The Gulf region's premier luxury marketing atelier, where heritage meets digital excellence. We serve royal families, family offices, and visionary brands with cultural authenticity.
               </p>
 
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3 text-gray-300">
-                  <MapPin className="w-5 h-5 luxury-gold" />
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3 text-pearl-white">
+                  <MapPin className="w-5 h-5 text-emerald-teal" />
                   <span>SHAMS Media City, Dubai, UAE</span>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-300">
-                  <Phone className="w-5 h-5 luxury-gold" />
-                  <span>+971 XXX XXXX</span>
+                <div className="flex items-center space-x-3 text-pearl-white">
+                  <Phone className="w-5 h-5 text-emerald-teal" />
+                  <span>+971 4 123 4567</span>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-300">
-                  <Mail className="w-5 h-5 luxury-gold" />
+                <div className="flex items-center space-x-3 text-pearl-white">
+                  <Mail className="w-5 h-5 text-emerald-teal" />
                   <span>hello@arabmoneyofficial.com</span>
+                </div>
+                <div className="text-dubai-sand text-sm mt-4">
+                  <div className="font-semibold mb-1">Operating Hours (GST)</div>
+                  <div>Sunday - Thursday: 9:00 AM - 6:00 PM</div>
+                  <div className="text-xs opacity-75 mt-1">*Adjusted for prayer times</div>
                 </div>
               </div>
             </motion.div>
@@ -157,7 +162,7 @@ export default function Footer() {
 
             <div className="text-center md:text-right">
               <p className="text-gray-400 text-sm">
-                © 2025 Arab Money Official LLC. Licensed in SHAMS Media City, Dubai.
+                © 2025 AMO Marketing. Part of Arab Money Official LLC. Licensed in SHAMS Media City, Dubai.
               </p>
               <p className="text-gray-500 text-xs mt-1">
                 Reviving Legacy, Creating Future
