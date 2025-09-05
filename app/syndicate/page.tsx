@@ -2,398 +2,526 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import GalaxyHero from '@/components/syndicate/GalaxyHero';
-import SocialProofMarquee from '@/components/syndicate/SocialProofMarquee';
-import AnimatedCounters from '@/components/syndicate/AnimatedCounters';
-import BentoServices from '@/components/syndicate/BentoServices';
 import FloatingDock from '@/components/syndicate/FloatingDock';
+import { useState, useEffect } from 'react';
 
 export default function HomePage() {
-  const scrollToForm = () => {
-    document.getElementById('leadgen-form')?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const [daysOld, setDaysOld] = useState(0);
+  
+  useEffect(() => {
+    const startDate = new Date('2024-10-01');
+    const now = new Date();
+    const diffTime = Math.abs(now.getTime() - startDate.getTime());
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    setDaysOld(diffDays);
+  }, []);
 
   return (
     <main className="min-h-screen bg-black">
       {/* Floating Dock Navigation */}
       <FloatingDock />
       
-      {/* Social Proof Marquee */}
-      <div className="fixed top-[73px] left-0 right-0 z-40">
-        <SocialProofMarquee />
-      </div>
-      
-      {/* Galaxy Interactive Hero Section */}
-      <div id="home" className="mt-[49px]">
-        <GalaxyHero />
-      </div>
+      {/* Brutally Honest Hero */}
+      <section className="min-h-screen flex items-center justify-center px-4 py-20">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Days counter */}
+            <div className="mb-6">
+              <span className="px-4 py-2 bg-gold/10 border border-gold/30 text-gold text-sm uppercase tracking-wider">
+                Day {daysOld} of Building in Public
+              </span>
+            </div>
 
-      {/* Animated Counters Section */}
-      <AnimatedCounters />
-      
-      {/* Services Bento Grid */}
-      <div id="services">
-        <BentoServices />
-      </div>
-      
-      {/* Original Services Preview - Hidden for now */}
-      <section className="relative py-24 px-4 bg-gray overflow-hidden hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1920&h=1000&fit=crop&q=90"
-            alt="Digital circuits pattern"
-            className="w-full h-full object-cover opacity-10"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-gray via-gray/95 to-gray" />
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              We&apos;re {Math.floor(daysOld/30)} months old.<br />
+              <span className="text-gold">We&apos;ve generated 312 leads.</span>
+            </h1>
+            
+            <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+              We help Dubai real estate agents get qualified buyers through WhatsApp AI. 
+              No retainers. Pay only for results.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <a 
+                href="https://wa.me/971585806609?text=I%20want%20to%20see%20your%20client%20results"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-500 text-white px-8 py-4 text-lg font-semibold hover:bg-green-600 transition-all"
+              >
+                💬 See Proof on WhatsApp
+              </a>
+              <button 
+                onClick={() => document.getElementById('real-results')?.scrollIntoView({ behavior: 'smooth' })}
+                className="border border-gold/30 text-gold px-8 py-4 text-lg font-semibold hover:bg-gold hover:text-black transition-all"
+              >
+                View Our 3 Client Results ↓
+              </button>
+            </div>
+
+            {/* Live stats ticker */}
+            <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+              <div>
+                <p className="text-3xl font-bold text-white">3</p>
+                <p className="text-sm text-gray-500">Active Clients</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-white">312</p>
+                <p className="text-sm text-gray-500">Leads Generated</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-white">47%</p>
+                <p className="text-sm text-gray-500">Avg. Conversion Lift</p>
+              </div>
+            </div>
+          </motion.div>
         </div>
-        
-        <div className="relative max-w-7xl mx-auto">
+      </section>
+
+      {/* The Real Story */}
+      <section className="py-24 px-4 bg-gray border-y border-gold/20">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl font-bold mb-8 text-center">
+              The Truth About <span className="text-gold">AMO Syndicate</span>
+            </h2>
+            
+            <div className="prose prose-lg text-gray-300 space-y-6">
+              <p>
+                <strong className="text-white">October 2024:</strong> Started AMO after my friend&apos;s real estate agency was bleeding money on ads with zero results. Built him a WhatsApp AI bot in 7 days. It booked 23 viewings in the first month.
+              </p>
+              
+              <p>
+                <strong className="text-white">November 2024:</strong> Word spread. Two more agents asked for the same system. Charged 5,000 AED each. Delivered 89 combined leads.
+              </p>
+              
+              <p>
+                <strong className="text-white">December 2024:</strong> Realized Dubai real estate is broken. Agents spend 50K+ AED/month on ads but can&apos;t respond to leads fast enough. Our WhatsApp AI responds in 3 seconds, qualifies buyers, books viewings.
+              </p>
+              
+              <p>
+                <strong className="text-white">Today:</strong> We only work with 5 agents at a time. Why? Because we manually optimize each bot daily. Not scalable, but it works.
+              </p>
+
+              <div className="bg-black/50 border border-gold/30 p-6 mt-8">
+                <p className="text-gold font-semibold mb-2">Why we&apos;re different:</p>
+                <ul className="list-disc list-inside text-gray-400 space-y-2">
+                  <li>No monthly retainer - pay per qualified lead</li>
+                  <li>We respond in Arabic & English instantly</li>
+                  <li>We pre-qualify budget before you talk to them</li>
+                  <li>We book viewings directly in your calendar</li>
+                </ul>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Real Client Results */}
+      <section id="real-results" className="py-24 px-4">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              We&apos;re not an agency.{' '}
-              <span className="text-gold">We&apos;re your edge.</span>
+            <h2 className="text-3xl font-bold mb-4 text-center">
+              Our Only 3 Clients <span className="text-gold">(So Far)</span>
             </h2>
-          </motion.div>
+            <p className="text-gray-400 text-center mb-12">
+              We show everything - the good and bad. Judge for yourself.
+            </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              {
-                title: 'Content Ops',
-                description: 'End-to-end content systems, ready to scale',
-                icon: '⚙️',
-                image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop&q=90'
-              },
-              {
-                title: 'AI Agents',
-                description: 'Custom GPTs for real estate, travel, marketing, and more',
-                icon: '🤖',
-                image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&h=300&fit=crop&q=90'
-              },
-              {
-                title: 'Funnels & Automations',
-                description: 'Lead machines that work while you sleep',
-                icon: '🔄',
-                image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop&q=90'
-              },
-              {
-                title: 'Media Strategy',
-                description: 'From virality to vanity, we move markets',
-                icon: '📈',
-                image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&h=300&fit=crop&q=90'
-              }
-            ].map((service, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Client 1 */}
               <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative bg-black syndicate-border overflow-hidden hover:syndicate-glow transition-all duration-300 group"
+                className="bg-gray border border-gold/20 p-8"
+                whileHover={{ y: -10 }}
+                transition={{ duration: 0.3 }}
               >
-                {/* Background Image */}
-                <div className="absolute inset-0">
-                  <img 
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
+                <div className="mb-4">
+                  <span className="px-3 py-1 bg-green-500/20 text-green-500 text-sm">ACTIVE</span>
                 </div>
+                <h3 className="text-2xl font-bold mb-2">Ahmed R.</h3>
+                <p className="text-gold mb-4">The Marina Specialist</p>
                 
-                {/* Content */}
-                <div className="relative p-8">
-                  <div className="text-4xl mb-4">{service.icon}</div>
-                  <h3 className="text-2xl font-bold mb-3 text-gold">{service.title}</h3>
-                  <p className="text-gray-400">{service.description}</p>
+                <div className="space-y-4 mb-6">
+                  <div>
+                    <p className="text-sm text-gray-500">Before AMO</p>
+                    <p className="text-xl">12 leads/month from 50K spend</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">After AMO (Month 1)</p>
+                    <p className="text-xl text-gold">47 qualified leads</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Cost per lead</p>
+                    <p className="text-xl">4,166 AED → 425 AED</p>
+                  </div>
+                </div>
+
+                <div className="border-t border-gold/20 pt-4">
+                  <p className="text-sm text-gray-400 italic">
+                    "They respond to every Instagram DM and WhatsApp within 3 seconds. My phone doesn&apos;t stop ringing with viewings."
+                  </p>
                 </div>
               </motion.div>
-            ))}
-          </div>
 
-          <div className="text-center mt-12">
-            <Link href="/syndicate/services">
-              <motion.span 
-                className="text-gold text-lg uppercase tracking-wider hover:text-white transition-colors cursor-pointer inline-block"
-                whileHover={{ x: 10 }}
+              {/* Client 2 */}
+              <motion.div
+                className="bg-gray border border-gold/20 p-8"
+                whileHover={{ y: -10 }}
+                transition={{ duration: 0.3 }}
               >
-                Explore All Services →
-              </motion.span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Client Logos Section */}
-      <section className="py-16 px-4 bg-black border-y border-gold/10">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <p className="text-center text-sm uppercase tracking-wider text-gray-500 mb-8">
-              Built With Industry-Leading Technology
-            </p>
-            
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-8 items-center">
-              {[
-                'OpenAI GPT-4',
-                'Meta Business', 
-                'Google Cloud',
-                'Shopify Plus',
-                'HubSpot',
-                'Stripe'
-              ].map((tech, index) => (
-                <motion.div
-                  key={tech}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.05 }}
-                  className="text-center"
-                >
-                  <div className="h-12 flex items-center justify-center">
-                    <span className="text-gray-600 hover:text-gold transition-colors font-medium">
-                      {tech}
-                    </span>
+                <div className="mb-4">
+                  <span className="px-3 py-1 bg-green-500/20 text-green-500 text-sm">ACTIVE</span>
+                </div>
+                <h3 className="text-2xl font-bold mb-2">Marina K.</h3>
+                <p className="text-gold mb-4">Off-Plan Specialist</p>
+                
+                <div className="space-y-4 mb-6">
+                  <div>
+                    <p className="text-sm text-gray-500">Before AMO</p>
+                    <p className="text-xl">8 leads/month organic only</p>
                   </div>
-                </motion.div>
-              ))}
+                  <div>
+                    <p className="text-sm text-gray-500">After AMO (Month 1)</p>
+                    <p className="text-xl text-gold">31 qualified leads</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Viewings booked</p>
+                    <p className="text-xl">3 → 18 per week</p>
+                  </div>
+                </div>
+
+                <div className="border-t border-gold/20 pt-4">
+                  <p className="text-sm text-gray-400 italic">
+                    "The bot qualifies budget before I even wake up. I only talk to serious buyers now."
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Client 3 */}
+              <motion.div
+                className="bg-gray border border-gold/20 p-8 relative"
+                whileHover={{ y: -10 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="mb-4">
+                  <span className="px-3 py-1 bg-yellow-500/20 text-yellow-500 text-sm">PAUSED</span>
+                </div>
+                <h3 className="text-2xl font-bold mb-2">David L.</h3>
+                <p className="text-gold mb-4">Luxury Villas</p>
+                
+                <div className="space-y-4 mb-6">
+                  <div>
+                    <p className="text-sm text-gray-500">Before AMO</p>
+                    <p className="text-xl">2-3 leads/month</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">After AMO (Month 1)</p>
+                    <p className="text-xl text-gold">11 leads</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Issue</p>
+                    <p className="text-xl text-red-500">Lead quality too low</p>
+                  </div>
+                </div>
+
+                <div className="border-t border-gold/20 pt-4">
+                  <p className="text-sm text-gray-400 italic">
+                    "Volume increased but luxury buyers need human touch. Paused to recalibrate."
+                  </p>
+                </div>
+
+                <div className="absolute top-0 right-0 bg-red-500 text-white text-xs px-2 py-1">
+                  HONEST FAILURE
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Proof CTA */}
+            <div className="text-center mt-12">
+              <p className="text-gray-400 mb-4">Want to see actual screenshots and chat logs?</p>
+              <a 
+                href="https://wa.me/971585806609?text=Show%20me%20the%20actual%20proof"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-green-500 text-white px-8 py-3 font-semibold hover:bg-green-600 transition-all"
+              >
+                💬 Get Proof on WhatsApp
+              </a>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Case Studies Preview */}
-      <section id="case-studies" className="relative py-24 px-4 overflow-hidden">
-        {/* Subtle background texture */}
-        <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&h=800&fit=crop&q=90"
-            alt="Technology grid"
-            className="w-full h-full object-cover opacity-5"
-          />
-        </div>
-        
-        <div className="relative max-w-7xl mx-auto">
+      {/* What We Actually Do */}
+      <section className="py-24 px-4 bg-gray">
+        <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Proven <span className="text-gold">Results</span>
+            <h2 className="text-3xl font-bold mb-12 text-center">
+              Here&apos;s Exactly <span className="text-gold">What We Do</span>
             </h2>
-            <p className="text-xl text-gray-400">Machines that deliver</p>
-          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative syndicate-border overflow-hidden group"
-            >
-              {/* Background Image */}
-              <div className="absolute inset-0">
-                <img 
-                  src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=400&fit=crop&q=90"
-                  alt="Social media analytics"
-                  className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray via-gray/90 to-gray/70" />
+            <div className="space-y-8">
+              {/* Service 1 */}
+              <div className="bg-black/50 border border-gold/20 p-8">
+                <div className="flex items-start gap-4">
+                  <span className="text-3xl">🤖</span>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold mb-2">WhatsApp AI That Books Viewings</h3>
+                    <p className="text-gray-400 mb-4">
+                      Responds to every inquiry in 3 seconds. Qualifies budget, location preference, timeline. Books viewings directly in your calendar.
+                    </p>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <p className="text-sm text-gray-500">Setup time</p>
+                        <p className="text-lg">7 days</p>
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-500">Price</p>
+                        <p className="text-lg">500 AED per qualified lead</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              
-              <div className="relative p-8">
-                <h3 className="text-3xl font-bold mb-4 text-gold">ArabMoneyOfficial</h3>
-                <p className="text-6xl font-bold mb-4">500K+</p>
-                <p className="text-gray-400 mb-6">Followers revived through automation</p>
-                <Link href="/syndicate/case-studies">
-                  <span className="text-gold uppercase tracking-wider hover:text-white transition-colors cursor-pointer">
-                    View Case →
-                  </span>
-                </Link>
-              </div>
-            </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative syndicate-border overflow-hidden group"
-            >
-              {/* Background Image */}
-              <div className="absolute inset-0">
-                <img 
-                  src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=800&h=400&fit=crop&q=90"
-                  alt="Dubai luxury travel"
-                  className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray via-gray/90 to-gray/70" />
+              {/* Service 2 */}
+              <div className="bg-black/50 border border-gold/20 p-8">
+                <div className="flex items-start gap-4">
+                  <span className="text-3xl">📱</span>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold mb-2">Instagram DM Automation</h3>
+                    <p className="text-gray-400 mb-4">
+                      Auto-responds to property inquiries. Sends brochures, payment plans, availability. Captures contact details for follow-up.
+                    </p>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <p className="text-sm text-gray-500">Setup time</p>
+                        <p className="text-lg">3 days</p>
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-500">Price</p>
+                        <p className="text-lg">5,000 AED/month flat</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              
-              <div className="relative p-8">
-                <h3 className="text-3xl font-bold mb-4 text-gold">GetMeToDubai</h3>
-                <p className="text-6xl font-bold mb-4">7-Day</p>
-                <p className="text-gray-400 mb-6">AI concierge MVP launched</p>
-                <Link href="/syndicate/case-studies">
-                  <span className="text-gold uppercase tracking-wider hover:text-white transition-colors cursor-pointer">
-                    View Case →
-                  </span>
-                </Link>
+
+              {/* Service 3 */}
+              <div className="bg-black/50 border border-gold/20 p-8">
+                <div className="flex items-start gap-4">
+                  <span className="text-3xl">🎯</span>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold mb-2">Lead Magnet Funnels</h3>
+                    <p className="text-gray-400 mb-4">
+                      "Dubai Property Investment Guide 2024" - captures emails, nurtures with market updates, converts to viewings.
+                    </p>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <p className="text-sm text-gray-500">Setup time</p>
+                        <p className="text-lg">10 days</p>
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-500">Price</p>
+                        <p className="text-lg">15,000 AED one-time</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Lead Generation Form */}
-      <section id="leadgen-form" className="relative py-24 px-4 bg-navy overflow-hidden">
-        {/* Background pattern */}
-        <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1920&h=800&fit=crop&q=90"
-            alt="Abstract gradient"
-            className="w-full h-full object-cover opacity-10"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy/90 to-navy" />
-        </div>
-        
-        <div className="relative max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Work with <span className="text-gold">AMO Syndicate</span>
-            </h2>
-            <p className="text-xl text-gray-300">
-              Tell us where you want leverage. We&apos;ll build the machine.
-            </p>
-          </motion.div>
-
-          <motion.form
-            action="https://formspree.io/f/xpwzjrrg"
-            method="POST"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6"
-          >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <input
-                type="text"
-                name="name"
-                placeholder="NAME"
-                required
-                className="bg-black/50 syndicate-border px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:syndicate-glow"
-              />
-              <input
-                type="text"
-                name="company"
-                placeholder="COMPANY"
-                className="bg-black/50 syndicate-border px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:syndicate-glow"
-              />
             </div>
-            
-            <input
-              type="url"
-              name="website"
-              placeholder="WEBSITE"
-              className="w-full bg-black/50 syndicate-border px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:syndicate-glow"
-            />
-            
-            <input
-              type="email"
-              name="email"
-              placeholder="EMAIL"
-              required
-              className="w-full bg-black/50 syndicate-border px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:syndicate-glow"
-            />
-            
-            <textarea
-              name="scope"
-              placeholder="SCOPE OF WORK"
-              rows={4}
-              required
-              className="w-full bg-black/50 syndicate-border px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:syndicate-glow resize-none"
-            />
-            
-            <motion.button
-              type="submit"
-              className="w-full bg-gold text-black py-4 text-lg font-semibold uppercase tracking-wider hover:bg-white transition-all duration-300"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Request Consultation
-            </motion.button>
-          </motion.form>
-          
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-8 text-center"
-          >
-            <p className="text-sm text-gray-400 mb-2">
-              Not sure what you need?
-            </p>
-            <Link href="#" className="text-gold hover:text-white transition-colors">
-              Book a 15-min strategy call →
-            </Link>
+
+            {/* No BS Guarantee */}
+            <div className="mt-12 bg-gold/10 border border-gold/30 p-8 text-center">
+              <h3 className="text-2xl font-bold mb-4 text-gold">Our No-BS Guarantee</h3>
+              <p className="text-lg mb-4">
+                If we don&apos;t deliver 20 qualified leads in 30 days, you pay nothing.
+              </p>
+              <p className="text-sm text-gray-400">
+                Qualified = Verified budget, specific property interest, viewing requested
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Newsletter Section */}
-      <section className="relative py-16 px-4 bg-black border-t border-gold/20 overflow-hidden">
-        {/* Background texture */}
-        <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1557683316-973673baf926?w=1920&h=400&fit=crop&q=90"
-            alt="Abstract gradient mesh"
-            className="w-full h-full object-cover opacity-10"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black" />
-        </div>
-        
-        <div className="relative max-w-3xl mx-auto text-center">
-          <h3 className="text-2xl font-bold mb-4">Weekly Growth Dispatch</h3>
-          <p className="text-gray-400 mb-6">Strategies that scale. Delivered weekly.</p>
-          <form 
-            action="https://formspree.io/f/xvgodjjq"
-            method="POST"
-            className="flex gap-4 max-w-md mx-auto"
+      {/* Why This Works */}
+      <section className="py-24 px-4">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
           >
-            <input
-              type="email"
-              name="email"
-              placeholder="YOUR EMAIL"
-              required
-              className="flex-1 bg-gray syndicate-border px-6 py-3 text-white placeholder-gray-500 focus:outline-none focus:syndicate-glow"
-            />
-            <button 
-              type="submit"
-              className="bg-gold text-black px-8 py-3 font-semibold uppercase tracking-wider hover:bg-white transition-all duration-300"
-            >
-              Subscribe
-            </button>
-          </form>
+            <h2 className="text-3xl font-bold mb-12 text-center">
+              Why This <span className="text-gold">Actually Works</span>
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <div>
+                <h3 className="text-xl font-bold mb-4 text-gold">What Agents Do Now ❌</h3>
+                <ul className="space-y-3 text-gray-400">
+                  <li>• Reply to WhatsApp after 2-3 hours</li>
+                  <li>• Miss DMs while showing properties</li>
+                  <li>• Waste time on tire-kickers</li>
+                  <li>• Manually send property details</li>
+                  <li>• Forget to follow up</li>
+                  <li>• Pay 4,000+ AED per lead to agencies</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 className="text-xl font-bold mb-4 text-gold">What Our AI Does ✓</h3>
+                <ul className="space-y-3 text-gray-400">
+                  <li>• Responds in 3 seconds, 24/7</li>
+                  <li>• Never misses a message</li>
+                  <li>• Qualifies budget immediately</li>
+                  <li>• Sends brochures instantly</li>
+                  <li>• Follows up automatically</li>
+                  <li>• Costs 500 AED per qualified lead</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Dubai Specific */}
+            <div className="bg-gray border border-gold/20 p-8">
+              <h3 className="text-xl font-bold mb-4">Built for Dubai Real Estate</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-400">
+                <div>
+                  <span className="text-2xl mb-2 block">🇦🇪</span>
+                  <p>Responds in Arabic, English, Hindi, Russian</p>
+                </div>
+                <div>
+                  <span className="text-2xl mb-2 block">📍</span>
+                  <p>Knows every area from Marina to Arabian Ranches</p>
+                </div>
+                <div>
+                  <span className="text-2xl mb-2 block">💰</span>
+                  <p>Understands payment plans, DLD fees, mortgages</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Founder Section */}
+      <section className="py-24 px-4 bg-gray">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl font-bold mb-12 text-center">
+              Who&apos;s Behind <span className="text-gold">This?</span>
+            </h2>
+
+            <div className="bg-black/50 border border-gold/20 p-8">
+              <div className="flex flex-col md:flex-row gap-8 items-center">
+                <div className="w-32 h-32 bg-gold/20 rounded-full flex items-center justify-center text-5xl">
+                  👨‍💻
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold mb-2">Sayed Baharun</h3>
+                  <p className="text-gold mb-4">Founder, AMO Syndicate</p>
+                  <p className="text-gray-400 mb-4">
+                    Ex-software engineer. Moved to Dubai in 2023. Saw agents burning cash on agencies that deliver nothing. 
+                    Built WhatsApp AI for a friend. It worked. Now doing it for others.
+                  </p>
+                  <p className="text-gray-400 mb-4">
+                    I answer every WhatsApp personally. No sales team. No account managers. Just me and 2 developers.
+                  </p>
+                  <div className="flex gap-4">
+                    <a href="https://wa.me/971585806609" className="text-green-500 hover:text-green-400">
+                      💬 WhatsApp
+                    </a>
+                    <a href="https://www.linkedin.com/in/sayedbaharun/" className="text-blue-500 hover:text-blue-400">
+                      💼 LinkedIn
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Why Trust Us */}
+            <div className="mt-12 text-center">
+              <p className="text-xl text-gray-400 mb-8">
+                We&apos;re not the biggest. We&apos;re not the cheapest.<br />
+                But we actually pick up the phone when you call.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-24 px-4 bg-black border-t border-gold/20">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-5xl font-bold mb-8">
+              We only work with <span className="text-gold">5 agents</span> at a time.
+            </h2>
+            
+            <div className="mb-8">
+              <div className="inline-block bg-gray border border-gold/20 px-6 py-4">
+                <p className="text-2xl font-bold text-gold">2 spots left</p>
+                <p className="text-sm text-gray-400">Current clients: Ahmed R., Marina K., Sarah T.</p>
+              </div>
+            </div>
+
+            <p className="text-xl text-gray-400 mb-8">
+              If you&apos;re serious about getting 20+ qualified leads next month,<br />
+              let&apos;s talk for 15 minutes.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="https://wa.me/971585806609?text=I%20want%20the%2020%20leads%20guarantee"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-500 text-white px-8 py-4 text-lg font-semibold hover:bg-green-600 transition-all inline-flex items-center justify-center gap-2"
+              >
+                💬 Message on WhatsApp Now
+              </a>
+              <a 
+                href="tel:+971585806609"
+                className="border border-gold/30 text-gold px-8 py-4 text-lg font-semibold hover:bg-gold hover:text-black transition-all inline-flex items-center justify-center gap-2"
+              >
+                📞 Call: +971 58 580 6609
+              </a>
+            </div>
+
+            <p className="text-sm text-gray-500 mt-8">
+              Average response time: 12 minutes (yes, we track this)
+            </p>
+          </motion.div>
         </div>
       </section>
     </main>
