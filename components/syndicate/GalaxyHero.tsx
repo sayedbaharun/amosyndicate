@@ -175,7 +175,7 @@ export default function GalaxyHero() {
           >
             <div className="w-2 h-2 bg-gold rounded-full animate-pulse" />
             <span className="text-sm text-gold uppercase tracking-wider">
-              SHAMS License #2113788.01
+              3 Months Old • 3 Clients • 312 Leads Generated
             </span>
           </motion.div>
 
@@ -187,11 +187,11 @@ export default function GalaxyHero() {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-gold to-white">
-              We build machines
+              We build AI systems
             </span>
             <br />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-gold via-yellow-400 to-gold">
-              behind media empires.
+              that generate leads 24/7
             </span>
           </motion.h1>
           

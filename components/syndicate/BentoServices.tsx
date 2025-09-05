@@ -9,81 +9,87 @@ export default function BentoServices() {
 
   const services = [
     {
-      id: 'ai-agents',
-      title: 'AI Agents',
-      subtitle: 'Custom GPTs That Convert',
-      description: 'Deploy intelligent automation that handles customer queries, qualifies leads, and closes deals 24/7.',
+      id: 'whatsapp-ai',
+      title: 'WhatsApp AI Bot',
+      subtitle: '3-Second Response Time',
+      description: 'Responds to property inquiries instantly. Qualifies budget, books viewings, sends brochures. In Arabic & English.',
       icon: '🤖',
-      stats: '85% Query Automation',
+      stats: '147 Leads/Month',
       gradient: 'from-yellow-600 to-gold',
       size: 'large', // 2x2 grid
-      features: ['WhatsApp Integration', 'Multi-language', 'RERA Compliant', 'Lead Scoring'],
-      cta: 'Deploy AI Now',
+      features: ['Dubai Real Estate', 'Budget Qualify', 'Arabic/English', '24/7 Active'],
+      cta: 'See Demo',
+      price: '500 AED/lead',
       image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop&q=90'
     },
     {
-      id: 'social-media',
-      title: 'Social Media Management',
-      subtitle: 'Content That Scales',
-      description: 'Multi-platform content systems that grow your following on autopilot.',
+      id: 'instagram-dm',
+      title: 'Instagram DM Automation',
+      subtitle: 'Never Miss a Lead',
+      description: 'Auto-responds to property comments and DMs. Captures contact info.',
       icon: '📱',
-      stats: '340% Engagement Increase',
+      stats: '89 DMs/Day Handled',
       gradient: 'from-purple-600 to-pink-600',
       size: 'medium', // 1x2 grid
-      features: ['5 Platforms', 'Daily Posts', 'Analytics'],
-      cta: 'Scale Presence',
+      features: ['Story Replies', 'Comment DMs', 'Lead Capture'],
+      cta: 'Get Started',
+      price: '5,000 AED/mo',
       image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop&q=90'
     },
     {
-      id: 'funnels',
-      title: 'Funnels & Automation',
-      subtitle: 'Machines That Sell',
-      description: 'High-converting landing pages and email sequences.',
+      id: 'lead-funnel',
+      title: 'Lead Magnet Funnel',
+      subtitle: 'Dubai Property Guide 2024',
+      description: 'Landing page + email sequence that nurtures leads to viewings.',
       icon: '🔄',
-      stats: '47% Conversion Rate',
+      stats: '31% Conversion',
       gradient: 'from-blue-600 to-cyan-600',
       size: 'medium', // 1x2 grid
-      features: ['Landing Pages', 'Email Flows', 'CRM Setup'],
-      cta: 'Build Funnels',
+      features: ['Landing Page', '7-Day Emails', 'CRM Setup'],
+      cta: 'Build Funnel',
+      price: '15,000 AED',
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&q=90'
     },
     {
-      id: 'paid-ads',
-      title: 'Paid Advertising',
-      subtitle: 'ROI Focused',
-      description: 'Meta, Google, TikTok campaigns that print money.',
-      icon: '🚀',
-      stats: '8x ROAS Average',
+      id: 'quick-audit',
+      title: 'Free Audit',
+      subtitle: '15-Min Analysis',
+      description: 'We analyze your current marketing and show exactly how to 2x leads.',
+      icon: '🎯',
+      stats: 'No Cost',
       gradient: 'from-green-600 to-emerald-600',
       size: 'small', // 1x1 grid
-      features: ['A/B Testing', 'Retargeting'],
-      cta: 'Start Ads',
+      features: ['WhatsApp Call', 'Custom Plan'],
+      cta: 'Book Now',
+      price: 'FREE',
       image: 'https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=400&h=400&fit=crop&q=90'
     },
     {
-      id: 'consulting',
-      title: 'Strategy Consulting',
-      subtitle: 'Growth Blueprints',
-      description: 'Expert guidance to scale your brand in MENA.',
-      icon: '🎯',
-      stats: '23 Brands Scaled',
+      id: 'done-with-you',
+      title: 'Implementation',
+      subtitle: '7-Day Sprint',
+      description: 'We set everything up WITH you. No lengthy onboarding.',
+      icon: '⚡',
+      stats: '7 Days',
       gradient: 'from-orange-600 to-red-600',
       size: 'small', // 1x1 grid
-      features: ['Audits', 'Roadmaps'],
-      cta: 'Get Strategy',
+      features: ['Fast Setup', 'Training'],
+      cta: 'Start Sprint',
+      price: 'Custom',
       image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=400&fit=crop&q=90'
     },
     {
-      id: 'content-ops',
-      title: 'Content Operations',
-      subtitle: 'Scale Creation',
-      description: 'End-to-end content production systems.',
-      icon: '⚙️',
-      stats: '500+ Posts/Month',
+      id: 'pay-per-lead',
+      title: 'Pure Performance',
+      subtitle: 'No Retainers',
+      description: 'You only pay for qualified leads. No monthly fees.',
+      icon: '💰',
+      stats: '20 Lead Guarantee',
       gradient: 'from-indigo-600 to-purple-600',
       size: 'small', // 1x1 grid
-      features: ['AI Writing', 'Scheduling'],
-      cta: 'Scale Content',
+      features: ['Risk-Free', 'Results Only'],
+      cta: 'Learn More',
+      price: 'Pay Per Lead',
       image: 'https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=400&h=400&fit=crop&q=90'
     }
   ];
@@ -100,11 +106,10 @@ export default function BentoServices() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            We're not an agency.{' '}
-            <span className="text-gold">We're your edge.</span>
+            What We <span className="text-gold">Actually Do</span>
           </h2>
           <p className="text-xl text-gray-400">
-            Click any service to explore our capabilities
+            Specific solutions for Dubai real estate. No fluff, just results.
           </p>
         </motion.div>
 

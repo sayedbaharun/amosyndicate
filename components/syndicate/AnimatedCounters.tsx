@@ -65,25 +65,25 @@ export default function AnimatedCounters() {
 
   const counters = [
     {
-      label: 'Founding Partners',
-      value: <><Counter from={0} to={7} duration={1.5} />/10</>,
+      label: 'Active Clients',
+      value: <><Counter from={0} to={3} duration={1.5} />/5</>,
       urgent: true,
-      subtext: '3 spots remaining'
+      subtext: '2 spots available'
     },
     {
-      label: 'Systems Built',
-      value: <Counter from={0} to={23} duration={2} suffix="+" />,
-      subtext: 'This month'
+      label: 'Leads Generated',
+      value: <Counter from={0} to={312} duration={2} />,
+      subtext: 'In 3 months'
     },
     {
-      label: 'Avg Response Time',
-      value: <><Counter from={24} to={2} duration={1.5} /> hrs</>,
-      subtext: 'Founder direct'
+      label: 'Response Time',
+      value: <><Counter from={10} to={3} duration={1.5} /> sec</>,
+      subtext: 'WhatsApp AI'
     },
     {
-      label: 'Success Rate',
-      value: <Counter from={0} to={94} duration={2} suffix="%" />,
-      subtext: 'Client satisfaction'
+      label: 'Setup Time',
+      value: <><Counter from={0} to={7} duration={2} /> days</>,
+      subtext: 'Full implementation'
     }
   ];
 
@@ -176,8 +176,8 @@ export default function AnimatedCounters() {
                 <span className="text-3xl">⏰</span>
               </motion.div>
               <div className="text-left">
-                <p className="text-gold font-bold">Limited Time Offer</p>
-                <p className="text-sm text-gray-400">50% off for founding partners ends soon</p>
+                <p className="text-gold font-bold">Early Bird Pricing</p>
+                <p className="text-sm text-gray-400">Pay-per-lead model for first 5 clients only</p>
               </div>
             </div>
             
